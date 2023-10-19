@@ -150,7 +150,44 @@ void prenderApagarMotor()
 }
 ~~~
 
+## Parte 3 Flores Matias
+![Parte3](circuito/circuitopart3mati.png)
+
+## Descripción
+A la versión anterior se le agrega un fotodiodo que añade se añade cómo condición extra para que el motor fucione.
+
+## Función principal
+
+Este fotodiodo al detectar una luz mayor al contador va a hacer que se cumpla una da las dos condiciones para que el motor comience a moverse.
+
+
+~~~ C (lenguaje en el que esta escrito)
+int intensidadLuz = analogRead(fotodiodoPin);
+
+if(fuerzaSensorFuerza > numero && intensidadLuz > numero)
+    {
+    	digitalWrite(MOTOR, HIGH);
+      	//Serial.println("b");
+    }
+    else
+    {
+    	digitalWrite(MOTOR, LOW);
+      	//Serial.println("Z");
+    }
+  }else
+  {
+  digitalWrite(MOTOR, LOW);
+  
+  }
+
+//Printea la intensidad de la luz, para poder manipular mejor el circuito
+  Serial.println("Intensidad de Luz: " + String(intensidadLuz));
+  
+~~~
+
+
 ## :robot: Link a los proyectos
 - [Parte 1](https://www.tinkercad.com/things/8P37P67VTbR)
 - [Parte 2](https://www.tinkercad.com/things/jXCdSiE0deq)
 - [Parte 3](https://www.tinkercad.com/things/5OJvtoHzFkk)
+- [Parte 3 Flores Matias](https://www.tinkercad.com/things/0vtg6NEDQVL)
